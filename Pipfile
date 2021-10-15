@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 
 [dev-packages]
+Django = "==2.2.1"
 
 [requires]
-python_version = "3.9"
+python_version = "3.8"
