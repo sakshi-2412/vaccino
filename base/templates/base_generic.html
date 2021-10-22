@@ -14,48 +14,22 @@
 
   <link rel="icon" href="{% static 'img/favicon.ico' %}">
   <link rel="stylesheet" href="{% static 'css/base_generic.css' %}">
+  {% block style %}
+  {% endblock %}
+  
 </head>
 
 <body>
-  {% comment %} <div class="row">
-      <div class="sidebar">
-        <ul>
-          <Image src="{% static 'img/logo.png' %}"/>
-          <li>
-              <a href="">Home</a>
-          </li>
-          <li>
-              <a href="">Dashboard</a>
-          </li>
-          <li>
-              <a href="">My Profile</a>
-          </li>
-          <li>
-              <a href="">Notifications</a>
-          </li>
-        </ul>
-      </div>  
-    
-    
-      <div class="main">
-        {% block content %}
-        {% endblock %}
-      </div>
-
-
-  </div> {% endcomment %}
-
   <div class="sidenav">
 		<img src="{% static 'img/logo.png' %}">
     <a href="/" class="d-flex justify-content-center">Home</a>
-		<a href="/create" class="d-flex justify-content-center">Create</a>
-		<a href="/2" class="d-flex justify-content-center">View</a>
+		<a href="/" class="d-flex justify-content-center">Dashboard</a>
+		<a href="/" class="d-flex justify-content-center">Profile</a>
+    <a href="/" class="d-flex justify-content-center">Notifications</a>
 	</div>
  
-	<div class="main">
-    {% block content %}
-	  {% endblock %}
-  </div>
+  {% block content %}
+  {% endblock %}
   
 </body>
 </html>

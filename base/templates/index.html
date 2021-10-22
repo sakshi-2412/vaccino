@@ -1,5 +1,35 @@
 {% extends "base_generic.html" %}
-
-{% block content %}
-  <h1>Vaccino!!!!!!</h1>
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">  
 {% endblock %}
+
+{% block content %}  
+  <div class="container">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+
+          <ul class="navbar-nav me-auto">
+            <li class="nav-title">HOME</li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="/">Login</a>
+            </li>
+		        <li class="nav-item">
+              <a href="/">Register</a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+
+    <div class="row">
+    <h1>vaccino vaccino</h1>
+    </div>
+  
+  </div>
+
+{% endblock %}
+
+{% comment %}  style="margin-left:250px; position:fixed; max-width:1290px" {% endcomment %}
