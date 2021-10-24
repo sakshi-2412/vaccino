@@ -34,9 +34,20 @@
         All rights reserved
     </div>
 	</div>
+
+  <div class="container-fluid">
+    <div class="row bg-white d-flex">
+        <div class="mr-auto p-2">HOME</div>
+        <a href="/" class="p-2">Login</a>
+        <a href="/" class="p-2">Register</a>
+    </div>
+
+    <div class="row">
+    {% block content %}
+    {% endblock %}
+    </div>
   
-  {% block content %}
-  {% endblock %}
+  </div>
   
 </body>
 </html>

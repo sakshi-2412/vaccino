@@ -44,3 +44,36 @@ body
 .sidenav .guide:hover {
   color: white;
 }
+
+.container-fluid
+{ margin-left: 250px; 
+  max-width: 1282px;
+}
+
+.nav-title
+{ color: #006666;
+  padding: 6px;
+  padding-left: 15px ;
+}
+
+.p-2
+{ color: white;
+  background-color: #006666;
+  font-size: 20px;
+  margin: 0px 3px;
+  width: 100px;
+  text-align: center;
+}
+
+.p-2:hover
+{ font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.mr-auto,.mr-auto:hover
+{ color: #006666;
+  background: none;
+  font-size: 25px;
+  font-weight: bold;
+}
