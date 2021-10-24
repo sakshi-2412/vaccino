@@ -2,7 +2,7 @@ body
 { background-color: #e6e6e6;
 }
 
-img
+.sidenav img
 { width: 150px;
   height: 150px; 
   margin-left: 50px;
@@ -12,9 +12,6 @@ img
   height:100%;
   width:250px;
   position: fixed;
-  /* z-index:1;
-  top:0;
-  left:0; */
   background-color:#006666;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -27,15 +24,23 @@ img
   font-size:25px;
   color: #006666;
   background-color: white;
-  margin: 10px 8px;
+  margin: 10px 12px;
+  border-radius: 7px;
 }
 
 .sidenav a:hover{
   color:#00b3b3;
 }	
 
-.main{
-  margin-left:250px;
-  padding: 0px 10px;
-  position: fixed;
+.sidenav .guide {
+  color: rgb(209, 209, 209);
+  background: none;
+  font-size: 30px;
+  text-align: center;
+  display: block;
+  padding: 30px 0px;
+}
+
+.sidenav .guide:hover {
+  color: white;
 }

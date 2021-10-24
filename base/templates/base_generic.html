@@ -21,13 +21,20 @@
 
 <body>
   <div class="sidenav">
-		<img src="{% static 'img/logo.png' %}">
-    <a href="/" class="d-flex justify-content-center">Home</a>
+		<img src="{% static 'img/logo.png' %}" alt="VACCINO">
+    <a href="/" class="d-flex justify-content-center mt-5">Home</a>
 		<a href="/" class="d-flex justify-content-center">Dashboard</a>
 		<a href="/" class="d-flex justify-content-center">Profile</a>
-    <a href="/" class="d-flex justify-content-center">Notifications</a>
+    <a href="/" class="d-flex justify-content-center mb-5">Notifications</a>
+    <a href="/" class="guide"> 
+      Covid <br> Guidelines
+    </a>
+    <div class="footer text-white text-center mt-5">
+        © 2021 Copyright: Vaccino<br>
+        All rights reserved
+    </div>
 	</div>
- 
+  
   {% block content %}
   {% endblock %}
   
