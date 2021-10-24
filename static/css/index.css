@@ -1,23 +1,16 @@
-.container
-{ margin-left: 250px; 
-  max-width: 1280px;
-}
-
-.nav-title
-{ color: #006666;
-  font-weight: bold;
-  font-size: 30px;
+.heading
+{ display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
- 
-.nav-item
-{ padding: 5px 5px;
-  font-size: 15px;
-  background-color: #006666;
-  float: left;
-}
-
-.nav-item a
-{ text-decoration: none;
-  color:white;
+  font-weight: bolder;
+  color: #005050;
+  font-size: 65px;
+  margin-top: 40px;
+  background-image: url("../img/home.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
 }
