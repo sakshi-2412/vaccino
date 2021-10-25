@@ -5,12 +5,13 @@ body
 .sidenav img
 { width: 150px;
   height: 150px; 
-  margin-left: 50px;
+  margin-left: 3vw;
 }
 
 .sidenav {
   height:100%;
-  width:250px;
+  width:16vw;
+  min-width: 180px;
   position: fixed;
   background-color:#006666;
   overflow-x: hidden;
@@ -46,22 +47,16 @@ body
 }
 
 .container-fluid
-{ margin-left: 250px; 
-  max-width: 1282px;
-}
-
-.nav-title
-{ color: #006666;
-  padding: 6px;
-  padding-left: 15px ;
+{ margin-left: clamp(180px,16vw,16vw); 
+  max-width: 100vw;
 }
 
 .p-2
 { color: white;
   background-color: #006666;
-  font-size: 20px;
+  font-size: clamp(15px,1.5vw,1.5vw);
   margin: 0px 3px;
-  width: 100px;
+  width: clamp(70px,7vw,7vw);
   text-align: center;
 }
 
@@ -74,7 +69,7 @@ body
 .mr-auto,.mr-auto:hover
 { color: #006666;
   background: none;
-  font-size: 25px;
+  font-size: clamp(17px,1.7vw,1.7vw);
   font-weight: bold;
 }
 

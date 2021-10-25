@@ -2,8 +2,8 @@
 { display: flex;
   align-self: center;
   max-width: 800px;
-  min-height: 120px;
-  margin: 30px 30px;
+  min-height: 100px;
+  margin: 30px 2vw;
   background-color: white;
   border-radius: 7px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

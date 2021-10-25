@@ -5,12 +5,12 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bolder;
   color: #005050;
-  font-size: 65px;
+  font-size: clamp(30px,4vw,4vw);
   margin-top: 40px;
   background-image: url("../img/home.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
-  height: 300px;
+  height: clamp(200px,20vw,20vw);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

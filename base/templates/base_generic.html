@@ -21,33 +21,35 @@
 </head>
 
 <body>
-  <div class="sidenav">
-		<img src="{% static 'img/logo.png' %}" alt="VACCINO">
-    <a href="/" class="d-flex justify-content-center mt-5">Home</a>
-		<a href="/" class="d-flex justify-content-center">Dashboard</a>
-		<a href="/" class="d-flex justify-content-center">Profile</a>
-    <a href="{% url 'notif' %}" class="d-flex justify-content-center mb-5">Notifications</a>
-    <a href="/" class="guide"> 
-      COVID <br> GUIDELINES
-    </a>
-    <div class="footer text-white text-center mt-5">
-        © 2021 Copyright: Vaccino<br>
-        All rights reserved
-    </div>
-	</div>
-
-  <div class="container-fluid">
-    <div class="row bg-white d-flex">
-        <div class="mr-auto p-2">{% block page %} {% endblock %}</div>
-        <a href="/" class="p-2">Login</a>
-        <a href="/" class="p-2">Register</a>
+  <div class="d-flex">
+    <div class="sidenav">
+      <img src="{% static 'img/logo.png' %}" alt="VACCINO">
+      <a href="/" class="d-flex justify-content-center mt-5">Home</a>
+      <a href="/" class="d-flex justify-content-center">Dashboard</a>
+      <a href="/" class="d-flex justify-content-center">Profile</a>
+      <a href="{% url 'notif' %}" class="d-flex justify-content-center mb-5">Notifications</a>
+      <a href="/" class="guide"> 
+        COVID <br> GUIDELINES
+      </a>
+      <div class="footer text-white text-center mt-5">
+          © 2021 Copyright: Vaccino<br>
+          All rights reserved
+      </div>
     </div>
 
-    <div class="main">
-    {% block content %}
-    {% endblock %}
+    <div class="container-fluid">
+      <div class="row bg-white d-flex">
+          <div class="mr-auto p-2">{% block page %} {% endblock %}</div>
+          <a href="/" class="p-2">Login</a>
+          <a href="/" class="p-2">Register</a>
+      </div>
+
+      <div class="main">
+      {% block content %}
+      {% endblock %}
+      </div>
+    
     </div>
-  
   </div>
   
 </body>
