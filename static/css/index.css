@@ -4,8 +4,8 @@
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bolder;
-  color: #005050;
-  font-size: clamp(30px,4vw,4vw);
+  color: #10366e;
+  font-size: clamp(20px,3.5vw,3.5vw);
   margin-top: 40px;
   background-image: url("../img/home.jpg");
   background-repeat: no-repeat;
