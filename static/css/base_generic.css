@@ -1,37 +1,37 @@
-body 
-{ background-color: #e6e6e6;
+body {
+  background-color: #e6e6e6;
 }
 
-.sidenav img
-{ width: 150px;
-  height: 150px; 
+.sidenav img {
+  width: 150px;
+  height: 150px;
   margin-left: 3vw;
 }
 
 .sidenav {
-  height:100%;
-  width:16vw;
+  height: 100%;
+  width: 16vw;
   min-width: 180px;
   position: fixed;
-  background-color:#006666;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding-top:20px;
+  background-color: #006666;
+  /* overflow-x:visible; */
+  /* overflow-y: visible;  */
+  padding-top: 20px;
 }
 
 .sidenav a {
   padding: 5px 0px;
   text-decoration: none;
-  font-size:25px;
+  font-size: 25px;
   color: #006666;
   background-color: white;
   margin: 10px 12px;
   border-radius: 7px;
 }
 
-.sidenav a:hover{
-  color:#00b3b3;
-}	
+.sidenav a:hover {
+  color: #00b3b3;
+}
 
 .sidenav .guide {
   color: rgb(209, 209, 209);
@@ -46,33 +46,34 @@ body
   color: white;
 }
 
-.container-fluid
-{ margin-left: clamp(180px,16vw,16vw); 
+.container-fluid {
+  margin-left: clamp(180px, 16vw, 16vw);
   max-width: 100vw;
 }
 
-.p-2
-{ color: white;
+.p-2 {
+  color: white;
   background-color: #006666;
-  font-size: clamp(15px,1.5vw,1.5vw);
+  font-size: clamp(15px, 1.5vw, 1.5vw);
   margin: 0px 3px;
-  width: clamp(70px,7vw,7vw);
+  width: clamp(70px, 7vw, 7vw);
   text-align: center;
 }
 
-.p-2:hover
-{ font-weight: bold;
+.p-2:hover {
+  font-weight: bold;
   color: white;
   text-decoration: none;
 }
 
-.mr-auto,.mr-auto:hover
-{ color: #006666;
+.mr-auto,
+.mr-auto:hover {
+  color: #006666;
   background: none;
-  font-size: clamp(17px,1.7vw,1.7vw);
+  font-size: clamp(17px, 1.7vw, 1.7vw);
   font-weight: bold;
 }
 
-.main
-{ height: 100%;
+.main {
+  height: 60%;
 }

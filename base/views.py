@@ -6,3 +6,6 @@ def index(request):
 
 def notif(request):
     return render(request, 'notif.html')
+
+def profile(request):
+    return render(request, 'profile.html')    
