@@ -28,35 +28,41 @@
     <div class="d-flex">
       <div class="sidenav">
         <img src="{% static 'img/logo.png' %}" alt="VACCINO" />
-        <a href="/" class="d-flex justify-content-center mt-5">Home</a>
-        <a href="/" class="d-flex justify-content-center">Dashboard</a>
-        <a href="{% url 'profile' %}" class="d-flex justify-content-center"
-          >Profile</a
-        >
-        <a href="{% url 'notif' %}" class="d-flex justify-content-center mb-5"
-          >Notifications</a
-        >
-        <a href="/" class="guide">
-          COVID <br />
+        <a href="{% url 'index' %}" class="d-flex justify-content-center mt-5">Home</a>
+        <a href="{% url 'index' %}" class="d-flex justify-content-center">Dashboard</a>
+        <a href="{% url 'profile' %}" class="d-flex justify-content-center">Profile</a>
+        <a href="{% url 'notif' %}" class="d-flex justify-content-center mb-5">Notifications</a>
+        <a href="{% url 'index' %}" class="guide">
+          COVID <br/>
           GUIDELINES
         </a>
-        <div class="footer text-white text-center mt-5">
-          © 2021 Copyright: Vaccino<br />
-          All rights reserved
-        </div>
       </div>
 
-      <div class="container-fluid">
+      <div class="d-flex flex-column min-vh-100 container-fluid">
         <div class="row bg-white d-flex">
           <div class="mr-auto p-2">{% block page %} {% endblock %}</div>
-          <a href="/" class="p-2">Login</a>
-          <a href="/" class="p-2">Register</a>
+          <a href="{% url 'index' %}" class="p-2">Login</a>
+          <a href="{% url 'index' %}" class="p-2">Register</a>
         </div>
 
         <div class="main">{% block content %} {% endblock %}</div>
 
-        <div class="cards_main">{% block cards %} {% endblock %}</div>
+        <div class="mt-auto row footer">
+            <div class="d-flex flex-column">
+
+            <div class="text-center">
+            <h4><b>Contact Us</b></h4>
+            <div> <b>HELPLINE:</b> +91 9978653927</div>
+            <div><b>E-MAIL:</b> vaccino.iitbhu@gmail.com</div>
+            </div>
+            <br><br>
+            <div class="text-center">
+              © 2021 Copyright: Vaccino<br/>
+              All rights reserved
+            </div>
+        </div>
       </div>
+
     </div>
   </body>
 </html>

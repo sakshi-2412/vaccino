@@ -1,5 +1,7 @@
 body {
   background-color: #e6e6e6;
+  min-height: 100%;
+  position: relative;
 }
 
 .sidenav img {
@@ -55,7 +57,7 @@ body {
   color: white;
   background-color: #006666;
   font-size: clamp(15px, 1.5vw, 1.5vw);
-  margin: 0px 3px;
+  margin-right:3px;
   width: clamp(70px, 7vw, 7vw);
   text-align: center;
 }
@@ -74,6 +76,14 @@ body {
   font-weight: bold;
 }
 
-.main {
-  height: 60%;
+.footer
+{ display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(56, 56, 56);
+  color: white;
+  bottom:auto;
+  min-height: 100px;
+  padding: 20px 0px;
 }
