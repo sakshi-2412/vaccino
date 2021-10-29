@@ -12,13 +12,15 @@ body {
 
 .sidenav {
   height: 100%;
-  width: 16vw;
-  min-width: 180px;
+  width: clamp(180px,16vw,16vw);
   position: fixed;
   background-color: #006666;
-  /* overflow-x:visible; */
-  /* overflow-y: visible;  */
   padding-top: 20px;
+}
+
+.sidenav .hidenav{
+  display: none;
+  text-align: center;
 }
 
 .sidenav a {
@@ -86,4 +88,23 @@ body {
   bottom:auto;
   min-height: 100px;
   padding: 20px 0px;
+}
+
+@media only screen and (max-width: 650px) {
+  .sidenav .hidenav{
+    display: block;
+  }
+
+  .sidenav{
+    width:50px;
+    padding-top: 5px;
+  }
+
+  .sidenav .shownav{
+    display: none;
+  }
+
+  .container-fluid{
+    margin-left: 50px;
+  }
 }

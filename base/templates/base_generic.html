@@ -26,20 +26,32 @@
 
   <body>
     <div class="d-flex">
-      <div class="sidenav">
-        <img src="{% static 'img/logo.png' %}" alt="VACCINO" />
-        <a href="{% url 'index' %}" class="d-flex justify-content-center mt-5">Home</a>
-        <a href="{% url 'index' %}" class="d-flex justify-content-center">Dashboard</a>
-        <a href="{% url 'profile' %}" class="d-flex justify-content-center">Profile</a>
-        <a href="{% url 'notif' %}" class="d-flex justify-content-center mb-5">Notifications</a>
-        <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
-        target="_blank" class="guide">
-          COVID <br/>
-          GUIDELINES
-        </a>
+      <div class="sidenav" id="sidenav">
+        <div class="shownav" id="shownav">
+          <img src="{% static 'img/logo.png' %}" alt="VACCINO" />
+          <a href="{% url 'index' %}" class="d-flex justify-content-center mt-5">Home</a>
+          <a href="{% url 'index' %}" class="d-flex justify-content-center">Dashboard</a>
+          <a href="{% url 'profile' %}" class="d-flex justify-content-center">Profile</a>
+          <a href="{% url 'notif' %}" class="d-flex justify-content-center mb-3">Notifications</a>
+          <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
+          target="_blank" class="guide">
+            COVID <br/>
+            GUIDELINES
+          </a>
+          <div class="text-center">
+            <div class="material-icons" style="font-size: 50px; color:white;" id="hidebtn" role="button">
+              arrow_circle_left
+            </div>
+          </div>
+        </div>
+        <div class="hidenav" id="hidenav">
+          <div class="material-icons" style="font-size: 35px; color:white" id="showbtn" role="button">
+            arrow_circle_right
+          </div>
+        </div>
       </div>
 
-      <div class="d-flex flex-column min-vh-100 container-fluid">
+      <div class="d-flex flex-column min-vh-100 container-fluid" id="main">
         <div class="row bg-white d-flex">
           <div class="mr-auto p-2">{% block page %} {% endblock %}</div>
           <a href="{% url 'index' %}" class="p-2">Login</a>
@@ -67,3 +79,26 @@
     </div>
   </body>
 </html>
+
+<script>
+
+var hidebtn = document.getElementById("hidebtn");
+var showbtn = document.getElementById("showbtn"); 
+
+hidebtn.addEventListener("click", function() {
+	document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").style.paddingTop = "5px";
+  document.getElementById("shownav").style.display = "none";
+  document.getElementById("hidenav").style.display = "block";
+  document.getElementById("main").style.marginLeft = "50px";
+}, false);
+
+showbtn.addEventListener("click", function() {
+	document.getElementById("sidenav").style.width = "clamp(180px,16vw,16vw)";
+  document.getElementById("sidenav").style.paddingTop = "20px";
+  document.getElementById("shownav").style.display = "block";
+  document.getElementById("hidenav").style.display = "none";
+  document.getElementById("main").style.marginLeft = "clamp(180px, 16vw, 16vw)";
+}, false);
+
+</script>
