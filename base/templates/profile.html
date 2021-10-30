@@ -1,10 +1,41 @@
-{% extends "base_generic.html" %}
-
-{% load static %}
-{% block style %}
-<link rel="stylesheet" href="{% static 'css/profile.css' %}">  
+{% extends "base_generic.html" %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+{% endblock %} {% block page %} PROFILE {% endblock%} {% block content %}
+<div class="row heading"></div>
+<div class="wrapper">
+  <div class="info_data">
+    <div class="top">
+      <div class="left">
+    <span class="material-icons"> person </span>
+    </div>
+    <div class="right">
+      <h3><b>Prerna Pathak</b></h3>
+      <h4><b>20076198</b></h4>
+      </div>
+    </div>
+    <br />
+    <div class="bottom">
+      <div class="data">
+        <h5>Branch :</h5>
+        <p>Computer Science and Engineering</p>
+      </div>
+      <div class="data">
+        <h5>Program :</h5>
+        <p>4 - Year</p>
+      </div>
+      <div class="data">
+        <h5>Year :</h5>
+        <p>2nd year</p>
+      </div>
+      <div class="data">
+        <h5>Age :</h5>
+        <p>19 years</p>
+      </div>
+      <div class="data">
+        <h5>Gender :</h5>
+        <p>Female</p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
-
-{% block page %}
-PROFILE
-{% endblock%}
