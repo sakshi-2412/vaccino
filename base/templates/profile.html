@@ -1,18 +1,29 @@
-{% extends "base_generic.html" %} {% load static %} {% block style %}
+{% extends "base_generic.html" %} 
+
+{% load static %} 
+{% block style %}
 <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
-{% endblock %} {% block page %} PROFILE {% endblock%} {% block content %}
+{% endblock %} 
+
+{% block page %} 
+PROFILE 
+{% endblock%} 
+
+{% block content %}
 <div class="row heading"></div>
+
 <div class="wrapper">
-  <div class="info_data">
+
     <div class="top">
       <div class="left">
-    <span class="material-icons"> person </span>
-    </div>
-    <div class="right">
-      <h3><b>Prerna Pathak</b></h3>
-      <h4><b>20076198</b></h4>
+        <span class="material-icons"> person </span>
+      </div>
+      <div class="right">
+        <h3><b>Prerna Pathak</b></h3>
+        <h4><b>20076198</b></h4>
       </div>
     </div>
+
     <br />
     <div class="bottom">
       <div class="data">
@@ -36,6 +47,15 @@
         <p>Female</p>
       </div>
     </div>
-  </div>
+    
 </div>
 {% endblock %}
+
+
+{% comment %} 
+          setAvatarImage(
+            'https://ui-avatars.com/api/?name=' +
+              response.data.name +
+              '&background=fff&size=33&color=007bff'
+          ) 
+{% endcomment %}
