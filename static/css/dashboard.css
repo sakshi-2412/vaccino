@@ -1,10 +1,7 @@
 .wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-content: center;
-  text-align: center;
-  margin: 0px auto;
 }
 
 .title {
@@ -18,18 +15,32 @@
 
 .pie {
   background-color: white;
-  width: 500px;
-  height: 350px;
-  margin: 30px;
+  width: clamp(250px,30vw,30vw);
+  height: clamp(250px,25vw,25vw);
+  margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
-  padding: 5px 0px;
+  padding: 5px 10px;
 }
 
 .bar_chart {
   background-color: white;
-  width: 1060px;
-  height: 630px;
-  margin: 30px;
+  width: clamp(70px,61vw,61vw);
+  height: clamp(70px,60vw,60vw);
+  margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
   padding: 5px 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  
+  .pie {
+    margin: 10px auto;
+  }
+  .bar_chart {
+    width: clamp(250px,50vw,50vw);
+    margin: 10px auto;
+  }
 }
