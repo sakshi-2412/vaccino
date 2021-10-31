@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.title {
+  text-align: center;
+  color: rgb(97, 97, 97);
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.pie {
+  background-color: white;
+  width: 500px;
+  height: 350px;
+  margin: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
+  padding: 5px 0px;
+}
+
+.bar_chart {
+  background-color: white;
+  width: 1060px;
+  height: 630px;
+  margin: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
+  padding: 5px 10px;
+}
