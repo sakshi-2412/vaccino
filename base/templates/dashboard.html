@@ -49,7 +49,7 @@ DASHBOARD
             labels: {{ p1labels|safe }},
             datasets: [{
                 label: "Vaccinated with Dose 1",
-                backgroundColor: ["#3e95cd", "#8e5ea2"],
+                backgroundColor: ["#353580", "#79c6e0"],
                 data: {{ p1data|safe }}
             }]
         },
@@ -64,7 +64,7 @@ DASHBOARD
             labels: {{ p2labels|safe }},
             datasets: [{
                 label: "Vaccinated with Dose 2",
-                backgroundColor: ["#3e95cd", "#8e5ea2"],
+                backgroundColor: ["#353580", "#79c6e0"],
                 data: {{ p2data|safe }}
             }]
         },
@@ -79,7 +79,7 @@ DASHBOARD
             labels: {{ p3labels|safe }},
             datasets: [{
                 label: "Already infected with covid",
-                backgroundColor: ["#3e95cd", "#8e5ea2"],
+                backgroundColor: ["#3cb371", "#95e395"],
                 data: {{ p3data|safe }}
             }]
         },
@@ -94,7 +94,7 @@ DASHBOARD
             labels: {{ p4labels|safe }},
             datasets: [{
                 label: "Vaccine name",
-                backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f"],
+                backgroundColor: ["#95e395", "#3cb371", "#2b8352"],
                 data: {{ p4data|safe }}
             }]
         },
@@ -111,13 +111,13 @@ DASHBOARD
                 {   label: "Dose 1",
                     type: "bar",
                     stack: "Base",
-                    backgroundColor: "#3e95cd",
+                    backgroundColor: "#69279a",
                     data: {{ bar1_d1|safe }}
                 },
                 {   label: "Dose 2",
                     type: "bar",
                     stack: "Sensitivity",
-                    backgroundColor: "#8e5ea2",
+                    backgroundColor: "#b891d5",
                     data: {{ bar1_d2|safe }}
                 },
             ]
