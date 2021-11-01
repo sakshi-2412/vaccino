@@ -8,96 +8,103 @@
 }
 
 .wrapper {
-    max-width: 500px;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: -100px;
-    margin-bottom: 50px;
+  max-width: 500px;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: -100px;
+  margin-bottom: 50px;
 }
 
 .wrapper .top {
-    padding: 50px 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    text-align: center;
-    align-content: center;
-    background-color: rgb(63, 62, 62);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-content: center;
+  background-color: rgb(63, 62, 62);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
+}
+
+.wrapper .top .right {
+  margin-left: 5em;
+  margin-top: 0.75em;
 }
 
 .wrapper .material-icons {
-    font-size: 100px;
-    border-radius: 50%;
-    background-color: rgb(145, 233, 221);
-    color: rgb(14, 104, 92);
-}  
+  font-size: 100px;
+  border-radius: 50%;
+  background-color: rgb(145, 233, 221);
+  color: rgb(14, 104, 92);
+}
 
 .wrapper .bottom {
-    margin-bottom: 5%;
-    padding: 7% 0% 5% 10%;
-    background-color: rgb(254, 255, 253);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
+  margin-bottom: 5%;
+  padding: 7% 0% 5% 10%;
+  background-color: rgb(254, 255, 253);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
 }
 
 .wrapper .v_details {
-    padding: 7% 0% 5% 10%;
-    background-color: rgb(254, 255, 253);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
-    margin-bottom: 50px;
+  padding: 7% 0% 5% 10%;
+  background-color: rgb(254, 255, 253);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
+  margin-bottom: 50px;
 }
 
 .wrapper .title {
-    background-color: rgb(63, 62, 62);
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
-    padding: 20px;
-    text-align: center;
+  background-color: rgb(63, 62, 62);
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
 }
 
-.wrapper h3{
-    color: rgb(255, 255, 255);
+.wrapper h3 {
+  color: rgb(255, 255, 255);
 }
 
-.wrapper h4{
-    color: rgb(202, 198, 198);
+.wrapper h4 {
+  color: rgb(202, 198, 198);
 }
 
-.wrapper .data h5{
-    color: rgba(17, 11, 100, 0.959);
-    font-weight: 700;
-    text-align: left;
+.wrapper .data h5 {
+  color: rgba(17, 11, 100, 0.959);
+  font-weight: 700;
+  text-align: left;
 }
 
-.wrapper .data p{
-    color: rgb(89, 89, 90);
-    font-weight: 630;
-    text-align: left;
-    padding-bottom: 3%;
+.wrapper .data p {
+  color: rgb(89, 89, 90);
+  font-weight: 630;
+  text-align: left;
+  padding-bottom: 3%;
 }
 
-.wrapper .data p a{
-    text-decoration: none;
+.wrapper .data p a {
+  text-decoration: none;
 }
 
 .wrapper .button {
-    background-color: #006666;
-    color: white;
-    font-size: 20px;
-    padding: 20px 0px;
-    width: 150px;
-    border-radius: 9px;
-    text-align: center;
+  background-color: #006666;
+  color: white;
+  font-size: 20px;
+  padding: 20px 0px;
+  width: 150px;
+  border-radius: 9px;
+  text-align: center;
 }
 
 .wrapper .button:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 650px) {
-  .wrapper .top{
+  .wrapper .top {
     display: flex;
     flex-direction: column;
+  }
+  .wrapper .top .right {
+    margin-left: 0%;
   }
 }
