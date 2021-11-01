@@ -23,9 +23,9 @@ def dashboard(request):
     p4labels=["Covishield","Covaxin","Sputnik"]
     p4data=[50,40,10]
 
-    b1labels=["Year 1","Year 2","Year 3"]
-    bar1_d1=[30,20,50]
-    bar1_d2=[10,20,40]
+    b1labels=["Year 1","Year 2","Year 3","Year 4","Year 5","M.Tech","PhD"]
+    bar1_d1=[5,10,20,5,20,30,20]
+    bar1_d2=[2,3,10,5,20,20,10]
 
     context = {
         'p1labels': p1labels,
@@ -40,7 +40,7 @@ def dashboard(request):
         'p4labels': p4labels,
         'p4data': p4data,
 
-        'b1labels': p4labels,
+        'b1labels': b1labels,
         'bar1_d1': bar1_d1,
         'bar1_d2': bar1_d2,
 
