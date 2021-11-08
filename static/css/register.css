@@ -8,6 +8,10 @@
    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
    border-radius: 10px;
    padding: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 .heading {
@@ -24,9 +28,6 @@
     font-size: 17px;
 }
 
-.input-group {
-    width: 100%;
-}
 .input-group-text {
     background: rgb(51, 51, 51);
     color: white;
@@ -44,4 +45,9 @@
 .login_btn:hover {
     font-weight: bold;   
     color: white;
+}
+
+#id_first_name, #id_last_name, #id_email, #id_username, #id_password1, #id_password2, 
+#id_roll_no, #id_branch, #id_program, #id_year, #id_age, #id_gender {
+    width: 500px;
 }

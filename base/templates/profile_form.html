@@ -11,75 +11,75 @@ REGISTER
 
 {% block content %}  
    <div class="wrapper">
-      <div class="heading"> SIGN UP </div>
+      <div class="heading"> ADD PROFILE DETAILS </div>
 
          <form method="POST" action="">
             {% csrf_token %}
 
-            <div class="label">FIRST NAME</div>
+            <div class="label">ROLL NUMBER</div>
             <div class="input-group mb-3">
-               {{user_form.first_name}}
+               {{profile_form.roll_no}}
                <div class="input-group-append">
                   <span class="input-group-text">
-                  <div class="material-icons" style="font-size: 30px;">person</div>
+                  <div class="material-icons" style="font-size: 30px;">pin</div>
                   </span>
                </div>
             </div>
 
-            <div class="label">LAST NAME</div>
+            <div class="label">BRANCH</div>
             <div class="input-group mb-3">
-               {{user_form.last_name}}
+               {{profile_form.branch}}
                <div class="input-group-append">
                   <span class="input-group-text">
-                  <div class="material-icons" style="font-size: 30px;">person</div>
-                  </span>
-               </div>
-            </div>
-            
-            <div class="label">EMAIL</div>
-            <div class="input-group mb-3">
-               {{user_form.email}}
-               <div class="input-group-append">
-                  <span class="input-group-text">
-                  <div class="material-icons" style="font-size: 30px;">email</div>
+                  <div class="material-icons" style="font-size: 30px;"><span class="material-icons">engineering</span></div>
                   </span>
                </div>
             </div>
 
-            <div class="label">USERNAME</div>
+            <div class="label">PROGRAM</div>
             <div class="input-group mb-3">
-               {{user_form.username}}
+               {{profile_form.program}}
                <div class="input-group-append">
                   <span class="input-group-text">
-                  <div class="material-icons" style="font-size: 30px;">alternate_email</div>
+                  <div class="material-icons" style="font-size: 30px;">bar_chart</div>
                   </span>
                </div>
             </div>
 
-            <div class="label">PASSWORD</div>
+            <div class="label">YEAR</div>
             <div class="input-group mb-3">
-               {{user_form.password1}}
+               {{profile_form.year}}
                <div class="input-group-append">
                   <span class="input-group-text">
-                  <div class="material-icons" style="font-size: 30px;">lock</div>
+                  <div class="material-icons" style="font-size: 30px;">bar_chart</div>
                   </span>
                </div>
             </div>
 
-            <div class="label">CONFIRM PASSWORD</div>
+            <div class="label">AGE</div>
             <div class="input-group mb-3">
-               {{user_form.password2}}
+               {{profile_form.age}}
                <div class="input-group-append">
                   <span class="input-group-text">
-                  <div class="material-icons" style="font-size: 30px;">lock</div>
+                  <div class="material-icons" style="font-size: 30px;">event</div>
                   </span>
                </div>
             </div>
 
-            {{user_form.errors}}
+            <div class="label">GENDER</div>
+            <div class="input-group mb-3">
+               {{profile_form.gender}}
+               <div class="input-group-append">
+                  <span class="input-group-text">
+                  <div class="material-icons" style="font-size: 30px;">people</div>
+                  </span>
+               </div>
+            </div>
+             
+            {{profile_form.errors}}
 
             <div class="d-flex justify-content-center mt-5 login_container">
-            <input class="btn login_btn" type="submit" value="Register Account">
+            <input class="btn login_btn" type="submit" value="Add details">
             </div>
 
          </form>

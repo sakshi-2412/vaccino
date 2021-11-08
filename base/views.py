@@ -1,33 +1,45 @@
 from django.shortcuts import render
 from .forms import *
 from django.contrib import messages
+from django.shortcuts import redirect
+from django.contrib.auth import login,logout,authenticate
 
 # Create your views here.
 def register(request):
 
+    user_form = UserForm()
+
     if request.method == 'POST':
         user_form = UserForm(request.POST)
-        profile_form = ProfileForm(request.POST)
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
-            messages.success(request, 'Your profile was successfully created!')
-            return redirect('settings:profile')
+        if user_form.is_valid():
+            user = user_form.save()
+            if(user):
+                login(request, user)
+
+            messages.success(request, 'Add profile details to complete registration')
+            return redirect(profile_form)
         else:
-            messages.error(request, 'Please correct the error below.')
-    else:
-        user_form = UserForm()
-        profile_form = ProfileForm()
+            messages.error(request, 'Please correct the errors.')
 
-    context = { 
-        'user_form': user_form,
-        'profile_form': profile_form, 
-    }
+    return render(request, 'register.html', { 'user_form': user_form })
 
-    return render(request, 'register.html', context=context)
+def profile_form(request):
+    profile_form = ProfileForm(instance=request.user.profile)
+
+    if request.method == 'POST':
+        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        if profile_form.is_valid():
+            profile_form.save()
+
+            messages.success(request, 'Registration completed')
+            return render(request, 'index.html')
+        else:
+            messages.error(request, 'Please correct the errors.')
+
+    return render(request, 'profile_form.html', { 'profile_form': profile_form })
 
 
-def login(request):
+def login_(request):
     return render(request, 'login.html')
 
 def index(request):
