@@ -4,7 +4,7 @@
 .wrapper {
    background-color: white;
    margin: 50px auto;
-   max-width: 800px;
+   max-width: 600px;
    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
    border-radius: 10px;
    padding: 20px;
@@ -40,6 +40,7 @@
     background: #0a98c7;
     color: white;
     padding: 15px;
+    margin-bottom: 20px;
 }
 
 .login_btn:hover {
@@ -49,5 +50,5 @@
 
 #id_first_name, #id_last_name, #id_email, #id_username, #id_password1, #id_password2, 
 #id_roll_no, #id_branch, #id_program, #id_year, #id_age, #id_gender {
-    width: 500px;
+    width: 300px;
 }

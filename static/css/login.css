@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&family=Montserrat:ital,wght@1,500&family=Titillium+Web:wght@600;700&display=swap');
+
+.wrapper {
+   background-color: white;
+   margin: 50px auto;
+   max-width: 500px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
+   border-radius: 10px;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.heading {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0a98c7;
+}
+
+.label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17px;
+}
+
+.input-group-text {
+    background: rgb(51, 51, 51);
+    color: white;
+    border-color: rgba(0, 0, 0, 0.24);
+}
+
+.login_btn {
+    font-size: 22px;
+    width: 100%;
+    background: #0a98c7;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login_btn:hover {
+    font-weight: bold;   
+    color: white;
+}

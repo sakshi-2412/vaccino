@@ -2,7 +2,7 @@
 
 {% load static %}
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/register.css' %}">  
+<link rel="stylesheet" href="{% static 'css/login.css' %}">  
 {% endblock %}
 
 {% block page %}
@@ -18,29 +18,27 @@ LOGIN
 
             <div class="label">USERNAME</div>
             <div class="input-group mb-3">
-               {{user_form.username}}
+               <input type="text" name="username" class="form-control">
                <div class="input-group-append">
                   <span class="input-group-text">
-                  <div class="material-icons" style="font-size: 30px;">alternate_email</div>
+                  <div class="material-icons" style="font-size: 24px;">alternate_email</div>
                   </span>
                </div>
             </div>
 
             <div class="label">PASSWORD</div>
             <div class="input-group mb-3">
-               {{user_form.password1}}
+               <input type="password" name="password" class="form-control" >
                <div class="input-group-append">
                   <span class="input-group-text">
-                  <div class="material-icons" style="font-size: 30px;">lock</div>
+                  <div class="material-icons" style="font-size: 24px;">lock</div>
                   </span>
                </div>
             </div>
 
-            {{user_form.errors}}
-
-            <div class="d-flex justify-content-center mt-5 login_container">
-            <input class="btn login_btn" type="submit" value="Register Account">
-            </div>
+            <div class="d-flex justify-content-center mt-3 login_container">
+				<input class="btn login_btn" type="submit" value="Login">
+				</div>
 
          </form>
 

@@ -28,7 +28,6 @@
     <div class="d-flex">
       <div class="sidenav" id="sidenav">
         <div class="shownav" id="shownav">
-          <div> {{user.username}} </div>
           <img src="{% static 'img/logo.png' %}" alt="VACCINO" />
           <a href="{% url 'index' %}" class="d-flex justify-content-center mt-5">Home</a>
           <a href="{% url 'dashboard' %}" class="d-flex justify-content-center">Dashboard</a>
@@ -55,8 +54,13 @@
       <div class="d-flex flex-column min-vh-100 container-fluid" id="main">
         <div class="row bg-white d-flex">
           <div class="mr-auto p-2">{% block page %} {% endblock %}</div>
+          {% if user.is_authenticated %}
+          <div class="greet"> Hello, {{user.username}}</div>
+          <a href="{% url 'logout' %}" class="p-2">Logout</a>
+          {% else %}
           <a href="{% url 'login' %}" class="p-2">Login</a>
           <a href="{% url 'register' %}" class="p-2">Register</a>
+          {% endif %}
         </div>
 
         <div class="main">{% block content %} {% endblock %}</div>
@@ -66,7 +70,7 @@
 
             <div class="text-center">
             <h4><b>Contact Us</b></h4>
-            <div> <b>HELPLINE :</b> +91 9978653927</div>
+            <div> <b>HELPLINE :</b> +91 9978xxxxxx</div>
             <div><b>E-MAIL :</b> vaccino.iitbhu@gmail.com</div>
             </div>
             <br><br>
