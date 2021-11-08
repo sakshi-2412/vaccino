@@ -28,6 +28,7 @@
     <div class="d-flex">
       <div class="sidenav" id="sidenav">
         <div class="shownav" id="shownav">
+          <div> {{user.username}} </div>
           <img src="{% static 'img/logo.png' %}" alt="VACCINO" />
           <a href="{% url 'index' %}" class="d-flex justify-content-center mt-5">Home</a>
           <a href="{% url 'dashboard' %}" class="d-flex justify-content-center">Dashboard</a>
