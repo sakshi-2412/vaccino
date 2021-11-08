@@ -20,8 +20,9 @@ BRANCH_CHOICES= [
 
 PROGRAM_CHOICES= [
     ('B.TECH','B.Tech'),
+    ('IDD','IDD'),
     ('M.TECH','M.Tech'),
-    ('PHD','PhD'),
+    ('PhD','PhD'),
 ]
 
 
@@ -36,6 +37,7 @@ YEAR_CHOICES= [
 GENDER_CHOICES= [
     ('FEMALE','Female'),
     ('MALE','Male'),
+    ('PREFER NOT TO SAY','Prefer Not To Say')
 ]
 
 class Profile(models.Model):

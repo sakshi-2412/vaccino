@@ -39,16 +39,23 @@
     width: 100%;
     background: #0a98c7;
     color: white;
-    padding: 15px;
+    padding: 10px 0;
     margin-bottom: 20px;
 }
 
 .login_btn:hover {
-    font-weight: bold;   
+    font-weight: 500;   
     color: white;
 }
 
 #id_first_name, #id_last_name, #id_email, #id_username, #id_password1, #id_password2, 
 #id_roll_no, #id_branch, #id_program, #id_year, #id_age, #id_gender {
     width: 300px;
+}
+
+.bottom{
+    text-align: center;
+    font-size: 17px;
+    color: rgba(51, 51, 51, 0.733);
+    font-weight: 500;
 }
