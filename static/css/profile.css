@@ -35,6 +35,9 @@
   border-radius: 50%;
   background-color: rgb(145, 233, 221);
   color: rgb(14, 104, 92);
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .wrapper .bottom {
