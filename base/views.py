@@ -3,6 +3,7 @@ from .forms import *
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.contrib.auth import login,logout,authenticate
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def register(request):
@@ -53,7 +54,7 @@ def login_(request):
 				login(request, user)
 				return redirect('index')
 			else:
-				messages.info(request, 'Username OR password is incorrect')
+				messages.info(request, 'Username/password is incorrect')
 
 		context = {}
 		return render(request, 'login.html', context)
@@ -68,6 +69,7 @@ def index(request):
 def notif(request):
     return render(request, 'notif.html')
 
+@login_required(login_url='login')
 def profile(request):
     return render(request, 'profile.html') 
 
