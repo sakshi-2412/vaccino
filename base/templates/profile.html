@@ -15,11 +15,11 @@
   </div>
 
   <div class="bottom">
+     <a class="material-icons" id= "edit" href="{% url 'profile_form' %}">edit</a>
     <div class="data">
       <h5>Branch :</h5>
       <p>{{user.profile.branch}}</p>
     </div>
-
     <div class="data">
       <h5>Program :</h5>
       <p>{{user.profile.program}}</p>
@@ -34,13 +34,16 @@
     </div>
     <div class="data">
       <h5>Gender :</h5>
+     
       <p>{{user.profile.gender}}</p>
+    
     </div>
   </div>
 
   <br />
   <div class="title">VACCINATION DETAILS</div>
   <div class="v_details">
+     <a class="material-icons" id= "edit" href="{% url 'vacc_form' %}">edit</a>
     <div class="data">
       <h5>Reference ID :</h5>
       <p> {{ user_vacc.reference_id }}</p>
@@ -75,6 +78,7 @@
 
   <div class="title">COVID HISTORY</div>
   <div class="v_details">
+    <a class="material-icons" id= "edit" href="{% url 'profile_form' %}">edit</a>
     <div class="data">
       <h5>Covid affected :</h5>
       <p>No</p>
@@ -83,10 +87,6 @@
       <h5>Date of infection :</h5>
       <p>-</p>
     </div>
-  </div>
-
-  <div class="d-flex justify-content-center">
-    <span class="button" role="button"><a href="{% url 'vacc_form' %}" >Edit Profile </a></span>
   </div>
 </div>
 {% endblock %} {% comment %} setAvatarImage( 'https://ui-avatars.com/api/?name='
