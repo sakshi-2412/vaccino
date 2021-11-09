@@ -73,7 +73,13 @@ def notif(request):
 
 @login_required(login_url='login')
 def profile(request):
-    return render(request, 'profile.html') 
+    context = {
+        'user_vacc': None,
+    }
+    user_vacc = VaccDetails.objects.filter(student=request.user)[0]
+    context['user_vacc'] = user_vacc
+    
+    return render(request, 'profile.html', context = context) 
 
 def dashboard(request):
     p1labels=["Yes","No"]
