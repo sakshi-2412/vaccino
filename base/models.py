@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+def user_directory_path(instance, filename):
+    return 'user_{0}/{1}'.format(instance.student.id, filename)
+
 BRANCH_CHOICES= [
     ('COMPUTER SCIENCE AND ENGINEERING','Computer Science and Engineering'),
     ('ELECTRONICS ENGINEERING','Electronics Engineering'),
@@ -34,6 +37,18 @@ YEAR_CHOICES= [
     (5,5),
 ]
 
+DOSE_TAKEN= [
+    (1,1),
+    (2,2),
+]
+
+VACCINE_NAME= [
+    ('COVAXIN','Covaxin'),
+    ('COVISHIELD','Covishield'),
+    ('SPUTNIK','Sputnik')
+]
+
+
 GENDER_CHOICES= [
     ('FEMALE','Female'),
     ('MALE','Male'),
@@ -53,7 +68,17 @@ class Profile(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+        VaccDetails.objects.create(student=instance)
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+    instance.profile.save()      
+
+class VaccDetails(models.Model):
+    student = models.ForeignKey(User, related_name='student', on_delete=models.CASCADE)
+    reference_id = models.CharField(max_length=30, blank=True)
+    vaccine_name = models.CharField(max_length=15, blank=True, choices= VACCINE_NAME)
+    dose_taken = models.PositiveIntegerField(null=True, blank=True, choices= DOSE_TAKEN, default= '1')
+    date1 = models.DateField(null=True, blank=True)
+    date2 = models.DateField(null=True, blank=True) 
+    certificate = models.FileField(null=True, blank=True, upload_to=user_directory_path)  
