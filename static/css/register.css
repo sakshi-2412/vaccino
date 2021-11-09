@@ -14,6 +14,10 @@
    align-items: center;
 }
 
+#covid {
+    max-width: 400px;
+}
+
 .heading {
     font-family: 'Titillium Web', sans-serif;
     font-size: 40px;
@@ -48,13 +52,26 @@
     color: white;
 }
 
-#id_first_name, #id_last_name, #id_email, #id_username, #id_password1, #id_password2, 
-#id_roll_no, #id_branch, #id_program, #id_year, #id_age, #id_gender, #id_reference_id, #id_vaccine_name, #id_dose_taken, #id_date1, #id_date2, #id_certificate {
+#id_first_name, #id_last_name, #id_email, #id_username, #id_password1, 
+#id_password2, #id_roll_no, #id_branch, #id_program, #id_year, #id_age,
+#id_gender, #id_reference_id, #id_vaccine_name, #id_dose_taken, #id_date1,
+#id_date2, #id_certificate{
     width: 300px;
 }
 
 #certificate-clear_id, label{
     display: none;
+}
+
+input[type="checkbox"] {
+    height: 25px;
+    width: 30px;
+}
+
+
+
+#id_date {
+    width: 150px;
 }
 
 input[type=file]::file-selector-button {
