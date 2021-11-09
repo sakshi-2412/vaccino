@@ -7,22 +7,24 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def register(request):
+    if request.user.is_authenticated:
+	    return redirect('index')
+    else:    
+        user_form = UserForm()
 
-    user_form = UserForm()
+        if request.method == 'POST':
+            user_form = UserForm(request.POST)
+            if user_form.is_valid():
+                user = user_form.save()
+                if(user):
+                    login(request, user)
 
-    if request.method == 'POST':
-        user_form = UserForm(request.POST)
-        if user_form.is_valid():
-            user = user_form.save()
-            if(user):
-                login(request, user)
+                messages.success(request, 'Add profile details to complete registration')
+                return redirect(profile_form)
+            else:
+                messages.error(request, 'Please correct the errors.')
 
-            messages.success(request, 'Add profile details to complete registration')
-            return redirect(profile_form)
-        else:
-            messages.error(request, 'Please correct the errors.')
-
-    return render(request, 'register.html', { 'user_form': user_form })
+        return render(request, 'register.html', { 'user_form': user_form })
 
 def profile_form(request):
     profile_form = ProfileForm(instance=request.user.profile)
@@ -108,4 +110,21 @@ def dashboard(request):
         'bar1_d2': bar1_d2,
 
     }
-    return render(request, 'dashboard.html', context=context)    
+    return render(request, 'dashboard.html', context=context)  
+
+@login_required(login_url='login')
+def vacc_form(request):
+    existing_form = VaccDetails.objects.filter(student=request.user)[0]
+    vacc_form = VaccForm(instance=existing_form)
+
+    if request.method == 'POST':
+        vacc_form = VaccForm(request.POST, request.FILES, instance=existing_form)
+        if vacc_form.is_valid():
+            vacc_form.save()
+
+            messages.success(request, 'Vaccination Details completed')
+            return render(request, 'index.html')
+        else:
+            messages.error(request, 'Please correct the errors.')
+
+    return render(request, 'vacc_form.html', { 'vacc_form': vacc_form })
