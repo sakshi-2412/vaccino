@@ -1,11 +1,11 @@
 .box
 { display: flex;
   align-self: center;
-  max-width: 800px;
-  min-height: 100px;
-  margin: 30px 2vw;
+  max-width: 600px;
+  min-height: 110px;
   background-color: white;
   border-radius: 7px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 10px 6px;
+  margin: 30px auto;
 }

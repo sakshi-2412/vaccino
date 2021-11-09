@@ -10,43 +10,39 @@ NOTIFICATIONS
 {% endblock%}
 
 {% block content %}  
+      
+   {% for user_notif in user_notifs %}
+      {% if user_notif.student2 == user or not user_notif.student2 %}   
       <div class="box">
+
+         {% if user_notif.option == "success" %}
          <i class="material-icons" style="font-size: 40px; color: rgb(0, 202, 27);">check_circle</i>
-         <div class="d-flex flex-column">
-            <div class="d-sm-flex">
-               <div class="h4 ml-2 text-success">Congratulations! </div>
-               <div class="h6 ml-2 mt-2 text-muted">23rd Oct, 2021 </div>
-            </div>
-            <div class="h6 ml-2"> 
-               Your vaccination certificate has been approved.
-            </div>
-         </div>
-      </div>
-
-      <div class="box">
+         {% elif user_notif.option == "error" %}
          <i class="material-icons" style="font-size: 40px; color: red;">warning</i>
+         {% elif user_notif.option == "info" %}
+         <i class="material-icons" style="font-size: 40px; color: rgb(38, 189, 209);">info</i>
+         {% endif %}
+
          <div class="d-flex flex-column">
             <div class="d-sm-flex">
-               <div class="h4 ml-2 text-danger">Error! </div>
-               <div class="h6 ml-2 mt-2 text-muted">23rd Oct, 2021 </div>
-            </div>
-            <div class="h6 ml-2"> 
-               Upload your combined vaccination certificate for all doses.
-            </div>
-         </div>
-      </div>
 
-      <div class="box">
-         <i class="material-icons" style="font-size: 40px; color: rgb(38, 189, 209);">info</i>
-         <div class="d-flex flex-column">
-            <div class="d-sm-flex">   
+               {% if user_notif.option == "success" %}
+               <div class="h4 ml-2 text-success">Congratulations! </div>
+               {% elif user_notif.option == "error" %}
+               <div class="h4 ml-2 text-danger">Error! </div>
+               {% elif user_notif.option == "info" %}
                <div class="h4 ml-2 text-info">Reminder! </div>
-               <div class="h6 ml-2 mt-2 text-muted">3rd Oct, 2021 </div>
+               {% endif %}
+
+               <div class="h6 ml-2 mt-2 text-muted">{{ user_notif.date_notif }}</div>
             </div>
             <div class="h6 ml-2"> 
-               Last date to fill your covid history is till 3rd November,2021.
+               {{ user_notif.message }}
             </div>
          </div>
+
       </div>
+      {% endif %}
+   {% endfor %}
 
 {% endblock %}

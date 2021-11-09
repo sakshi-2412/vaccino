@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
+import datetime
 
 # Create your views here.
 def register(request):
@@ -19,8 +20,16 @@ def register(request):
                 if(user):
                     login(request, user)
 
-                messages.success(request, 'Add profile details to complete registration')
-                return redirect(profile_form)
+                Notifications.objects.create(student2=request.user,
+                                        message="Your account was registered",
+                                        option="success",
+                                        date_notif=datetime.datetime.now())
+                Notifications.objects.create(student2=request.user,
+                                        message="Complete your profile and vaccination details from the profile page",
+                                        option="info",
+                                        date_notif=datetime.datetime.now())
+
+                return redirect('notif')
             else:
                 messages.error(request, 'Please correct the errors.')
 
@@ -53,7 +62,12 @@ def index(request):
     return render(request, 'index.html')
 
 def notif(request):
-    return render(request, 'notif.html')
+    context = {
+        'user_notifs': None,
+    }
+    user_notifs = Notifications.objects.all()
+    context['user_notifs'] = user_notifs
+    return render(request, 'notif.html',context = context)
 
 @login_required(login_url='login')
 def profile(request):
@@ -113,8 +127,17 @@ def profile_form(request):
         if profile_form.is_valid():
             profile_form.save()
 
-            messages.success(request, 'Registration completed')
-            return render(request, 'profile.html')
+            Notifications.objects.create(student2=request.user,
+                                        message="Profile details updated",
+                                        option="success",
+                                        date_notif=datetime.datetime.now())
+            Notifications.objects.create(student2=request.user,
+                                        message=
+                                        "Complete your vaccination details (if you have not) from the profile page",
+                                        option="info",
+                                        date_notif=datetime.datetime.now())
+
+            return redirect('notif')
         else:
             messages.error(request, 'Please correct the errors.')
 
@@ -130,8 +153,22 @@ def vacc_form(request):
         if vacc_form.is_valid():
             vacc_form.save()
 
-            messages.success(request, 'Vaccination Details completed')
-            return render(request, 'profile.html')
+            Notifications.objects.create(student2=request.user,
+                                        message="Vaccination details updated",
+                                        option="success",
+                                        date_notif=datetime.datetime.now())
+            Notifications.objects.create(student2=request.user,
+                                        message=
+                                        "Wait for the authority to verify your vaccination certificate",
+                                        option="info",
+                                        date_notif=datetime.datetime.now())
+            Notifications.objects.create(student2=request.user,
+                                        message=
+                                        "Complete your covid history details (if you have not yet) from the profile page",
+                                        option="info",
+                                        date_notif=datetime.datetime.now())
+
+            return redirect('notif')
         else:
             messages.error(request, 'Please correct the errors.')
 
@@ -147,8 +184,12 @@ def history_form(request):
         if history_form.is_valid():
             history_form.save()
 
-            messages.success(request, 'Vaccination Details completed')
-            return render(request, 'profile.html')
+            Notifications.objects.create(student2=request.user,
+                                        message="Covid History form updated",
+                                        option="success",
+                                        date_notif=datetime.datetime.now())
+                                        
+            return redirect('notif')
         else:
             messages.error(request, 'Please correct the errors.')
 

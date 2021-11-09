@@ -48,11 +48,16 @@ VACCINE_NAME= [
     ('SPUTNIK','Sputnik')
 ]
 
-
 GENDER_CHOICES= [
     ('FEMALE','Female'),
     ('MALE','Male'),
     ('PREFER NOT TO SAY','Prefer Not To Say')
+]
+
+NOTIF_CHOICES= [
+    ('info','info'),
+    ('success','success'),
+    ('error','error')
 ]
 
 class Profile(models.Model):
@@ -88,3 +93,9 @@ class CovidHistory(models.Model):
     student1 = models.ForeignKey(User, related_name='student1', on_delete=models.CASCADE)
     infected = models.BooleanField(default=False)
     date = models.DateField(null=True, blank=True)
+
+class Notifications(models.Model):
+    student2 = models.ForeignKey(User, related_name='student2', on_delete=models.CASCADE, null=True, blank=True)
+    message = models.TextField(null=True, blank=True)
+    option = models.CharField(max_length=15, blank=True, choices= NOTIF_CHOICES)
+    date_notif = models.DateTimeField(null=True, blank=True)
