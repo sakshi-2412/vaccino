@@ -69,6 +69,7 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
         VaccDetails.objects.create(student=instance)
+        CovidHistory.objects.create(student1=instance)
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
@@ -82,3 +83,8 @@ class VaccDetails(models.Model):
     date1 = models.DateField(null=True, blank=True)
     date2 = models.DateField(null=True, blank=True) 
     certificate = models.FileField(null=True, blank=True, upload_to=user_directory_path)  
+
+class CovidHistory(models.Model):
+    student1 = models.ForeignKey(User, related_name='student1', on_delete=models.CASCADE)
+    infected = models.BooleanField(default=False)
+    date = models.DateField(null=True, blank=True)

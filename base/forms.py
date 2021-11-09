@@ -25,3 +25,11 @@ class VaccForm(ModelForm):
             'date1': DateInput(),
             'date2': DateInput()
         }
+
+class HistoryForm(ModelForm):
+	class Meta:
+		model = CovidHistory
+		fields = ['infected','date']
+		widgets = {
+            'date': DateInput()
+        }

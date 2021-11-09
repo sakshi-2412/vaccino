@@ -26,22 +26,6 @@ def register(request):
 
         return render(request, 'register.html', { 'user_form': user_form })
 
-def profile_form(request):
-    profile_form = ProfileForm(instance=request.user.profile)
-
-    if request.method == 'POST':
-        profile_form = ProfileForm(request.POST, instance=request.user.profile)
-        if profile_form.is_valid():
-            profile_form.save()
-
-            messages.success(request, 'Registration completed')
-            return render(request, 'index.html')
-        else:
-            messages.error(request, 'Please correct the errors.')
-
-    return render(request, 'profile_form.html', { 'profile_form': profile_form })
-
-
 def login_(request):
 	if request.user.is_authenticated:
 		return redirect('index')
@@ -75,9 +59,12 @@ def notif(request):
 def profile(request):
     context = {
         'user_vacc': None,
+        'user_covid': None,
     }
     user_vacc = VaccDetails.objects.filter(student=request.user)[0]
+    user_covid = CovidHistory.objects.filter(student1=request.user)[0]
     context['user_vacc'] = user_vacc
+    context['user_covid'] = user_covid
     
     return render(request, 'profile.html', context = context) 
 
@@ -118,6 +105,21 @@ def dashboard(request):
     }
     return render(request, 'dashboard.html', context=context)  
 
+def profile_form(request):
+    profile_form = ProfileForm(instance=request.user.profile)
+
+    if request.method == 'POST':
+        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        if profile_form.is_valid():
+            profile_form.save()
+
+            messages.success(request, 'Registration completed')
+            return render(request, 'profile.html')
+        else:
+            messages.error(request, 'Please correct the errors.')
+
+    return render(request, 'profile_form.html', { 'profile_form': profile_form })
+    
 @login_required(login_url='login')
 def vacc_form(request):
     existing_form = VaccDetails.objects.filter(student=request.user)[0]
@@ -129,8 +131,25 @@ def vacc_form(request):
             vacc_form.save()
 
             messages.success(request, 'Vaccination Details completed')
-            return render(request, 'index.html')
+            return render(request, 'profile.html')
         else:
             messages.error(request, 'Please correct the errors.')
 
     return render(request, 'vacc_form.html', { 'vacc_form': vacc_form })
+
+@login_required(login_url='login')
+def history_form(request):
+    existing_form = CovidHistory.objects.filter(student1=request.user)[0]
+    history_form = HistoryForm(instance=existing_form)
+
+    if request.method == 'POST':
+        history_form = HistoryForm(request.POST, instance=existing_form)
+        if history_form.is_valid():
+            history_form.save()
+
+            messages.success(request, 'Vaccination Details completed')
+            return render(request, 'profile.html')
+        else:
+            messages.error(request, 'Please correct the errors.')
+
+    return render(request, 'history_form.html', { 'history_form': history_form })

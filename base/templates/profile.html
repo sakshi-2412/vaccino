@@ -78,14 +78,14 @@
 
   <div class="title">COVID HISTORY</div>
   <div class="v_details">
-    <a class="material-icons" id= "edit" href="{% url 'profile_form' %}">edit</a>
+    <a class="material-icons" id= "edit" href="{% url 'history_form' %}">edit</a>
     <div class="data">
       <h5>Covid affected :</h5>
-      <p>No</p>
+      <p>{{user_covid.infected}}</p>
     </div>
     <div class="data">
       <h5>Date of infection :</h5>
-      <p>-</p>
+      <p>{{user_covid.date}}</p>
     </div>
   </div>
 </div>

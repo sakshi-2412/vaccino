@@ -1,0 +1,43 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">  
+{% endblock %}
+
+{% block page %}
+PROFILE
+{% endblock%}
+
+{% block content %}  
+   <div class="wrapper" id="covid">
+      <div class="heading"> COVID HISTORY </div>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+
+            <div class="input-group mb-4">
+            <div class="label mr-4">COVID INFECTED</div> {{history_form.infected}}
+            </div>
+
+            <div class="label mb-2">DATE OF INFECTION</div>
+            <div class="input-group mb-3">
+               {{history_form.date}}
+               <div class="input-group-append">
+                  <span class="input-group-text">
+                  <div class="material-icons" style="font-size: 30px;">date_range</div>
+                  </span>
+               </div>
+            </div>
+
+            {{vacc_form.errors}}
+
+            <div class="d-flex justify-content-center mt-5 login_container">
+            <input class="btn login_btn" type="submit" value="Add details">
+            </div>
+
+        </form>
+
+   </div>
+
+{% endblock %}
