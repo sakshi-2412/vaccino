@@ -43,27 +43,33 @@
   <div class="v_details">
     <div class="data">
       <h5>Reference ID :</h5>
-      <p>54367834567896</p>
+      <p> {{ user_vacc.reference_id }}</p>
     </div>
     <div class="data">
       <h5>Vaccine Name :</h5>
-      <p>Covaxin</p>
+      <p> {{ user_vacc.vaccine_name }} </p>
     </div>
     <div class="data">
       <h5>Dose taken :</h5>
-      <p>Both</p>
+      <p> {{ user_vacc.dose_taken }} </p>
     </div>
     <div class="data">
       <h5>Date of Dose 1 :</h5>
-      <p>24th June, 2021</p>
+      <p> {{ user_vacc.date1 }} </p>
     </div>
     <div class="data">
       <h5>Date of Dose 2 :</h5>
-      <p>24th September, 2021</p>
+      <p> {{ user_vacc.date2 }} </p>
     </div>
     <div class="data">
       <h5>Vaccination certificate:</h5>
-      <p><a href="{% url 'index' %}"> Uploaded</a></p>
+      {% if user_vacc.certificate %}
+      <p><a href="{% get_media_prefix %}/{{user_vacc.certificate}}"> 
+      Uploaded
+      </a></p>
+      {% else %}
+      <p>Not available</p>
+      {% endif %}
     </div>
   </div>
 

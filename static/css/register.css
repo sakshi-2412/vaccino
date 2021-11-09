@@ -53,8 +53,29 @@
     width: 300px;
 }
 
-#id_certificate input{
-    background-color: black;
+#certificate-clear_id, label{
+    display: none;
+}
+
+input[type=file]::file-selector-button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+  
+input[type=file]::file-selector-button:hover {
+    font-weight: bold ;
+}
+
+input[type=file] {
+    color: #757575;
+    align-self:auto;
 }
 
 .instruction {
