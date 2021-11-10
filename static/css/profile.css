@@ -119,6 +119,19 @@
   transform: scale(1.1); 
 }
 
+.profile_image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgb(183, 213, 221);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px 3px;
+  font-size: 55px;
+  font-weight: bold;
+  color: #006666;
+  text-align: center;
+  line-height: 120px;
+}
+
 @media only screen and (max-width: 650px) {
   .wrapper .top {
     display: flex;
