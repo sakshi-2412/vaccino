@@ -11,12 +11,13 @@ PROFILE
 
 {% block content %}  
    <div class="wrapper">
-      <div class="heading"> ADD VACCINATION DETAILS </div>
+      <div class="heading"> VACCINATION DETAILS </div>
 
          <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
 
             <div class="label">REFERENCE ID</div>
+            <div class="h6 text-muted">(as mentioned in certificate)</div>
             <div class="input-group mb-3">
                {{vacc_form.reference_id}}
                <div class="input-group-append">

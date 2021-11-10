@@ -65,7 +65,7 @@ def notif(request):
     context = {
         'user_notifs': None,
     }
-    user_notifs = Notifications.objects.all()
+    user_notifs = Notifications.objects.all().order_by('-date_notif')
     context['user_notifs'] = user_notifs
     return render(request, 'notif.html',context = context)
 
@@ -83,21 +83,46 @@ def profile(request):
     return render(request, 'profile.html', context = context) 
 
 def dashboard(request):
+
+    date1yes = VaccDetails.objects.filter(date1__isnull = False ).count()
+    date1no = VaccDetails.objects.filter(date1__isnull = True ).count()
     p1labels=["Yes","No"]
-    p1data=[100,20]
+    p1data=[date1yes,date1no]
 
+    date2yes = VaccDetails.objects.filter(date2__isnull = False ).count()
+    date2no = VaccDetails.objects.filter(date2__isnull = True ).count()
     p2labels=["Yes","No"]
-    p2data=[70,50]
+    p2data=[date2yes,date2no]
 
+    infectedyes = CovidHistory.objects.filter(date__isnull = False ).count()
+    infectedno = CovidHistory.objects.filter(date__isnull = True ).count()
     p3labels=["Yes","No"]
-    p3data=[50,70]
+    p3data=[infectedyes,infectedno]
 
+    covishield = VaccDetails.objects.filter(vaccine_name = 'COVISHIELD' ).count()
+    covaxin = VaccDetails.objects.filter(vaccine_name = 'COVAXIN' ).count()
+    sputnik = VaccDetails.objects.filter(vaccine_name = 'SPUTNIK' ).count()
     p4labels=["Covishield","Covaxin","Sputnik"]
-    p4data=[50,40,10]
+    p4data=[ covishield, covaxin, sputnik ]
 
+    year11 = VaccDetails.objects.filter(student__profile__year = 1, date1__isnull = False ).count()
+    year21 = VaccDetails.objects.filter(student__profile__year = 2, date1__isnull = False ).count()
+    year31 = VaccDetails.objects.filter(student__profile__year = 3, date1__isnull = False ).count()
+    year41 = VaccDetails.objects.filter(student__profile__year = 4, date1__isnull = False ).count()
+    year51 = VaccDetails.objects.filter(student__profile__year = 5, date1__isnull = False ).count()
+    mtech1 = VaccDetails.objects.filter(student__profile__program = 'M.TECH', date1__isnull = False ).count()
+    phd1 = VaccDetails.objects.filter(student__profile__program = 'PhD', date1__isnull = False ).count()
+
+    year12 = VaccDetails.objects.filter(student__profile__year = 1, date2__isnull = False).count()
+    year22 = VaccDetails.objects.filter(student__profile__year = 2, date2__isnull = False ).count()
+    year32 = VaccDetails.objects.filter(student__profile__year = 3, date2__isnull = False ).count()
+    year42 = VaccDetails.objects.filter(student__profile__year = 4, date2__isnull = False ).count()
+    year52 = VaccDetails.objects.filter(student__profile__year = 5, date2__isnull = False ).count()
+    mtech2 = VaccDetails.objects.filter(student__profile__program = 'M.TECH', date2__isnull = False ).count()
+    phd2 = VaccDetails.objects.filter(student__profile__program = 'PhD', date2__isnull = False ).count()
     b1labels=["Year 1","Year 2","Year 3","Year 4","Year 5","M.Tech","PhD"]
-    bar1_d1=[5,10,20,5,20,30,20]
-    bar1_d2=[2,3,10,5,20,20,10]
+    bar1_d1=[year11,year21,year31,year41,year51,mtech1,phd1]
+    bar1_d2=[year12,year22,year32,year42,year52,mtech2,phd2]
 
     context = {
         'p1labels': p1labels,
@@ -119,6 +144,7 @@ def dashboard(request):
     }
     return render(request, 'dashboard.html', context=context)  
 
+@login_required(login_url='login')
 def profile_form(request):
     profile_form = ProfileForm(instance=request.user.profile)
 

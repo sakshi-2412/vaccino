@@ -65,7 +65,7 @@ class Profile(models.Model):
     roll_no = models.CharField(max_length=15, blank=True)
     branch = models.CharField(max_length=50, blank=True, choices= BRANCH_CHOICES)
     program = models.CharField(max_length=30, blank=True, choices= PROGRAM_CHOICES, default= 'B.Tech')
-    year = models.PositiveIntegerField(null=True, blank=True, choices= YEAR_CHOICES, default= '1')
+    year = models.PositiveIntegerField(null=True, blank=True, choices= YEAR_CHOICES, default= 1)
     age = models.PositiveIntegerField(null=True, blank=True)
     gender = models.CharField(max_length=15, blank=True, choices= GENDER_CHOICES, default= 'Female')
 

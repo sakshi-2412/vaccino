@@ -6,7 +6,9 @@
 <div class="wrapper">
   <div class="top">
     <div class="left">
-      <span class="material-icons"> person </span>
+      <div class="profile_image">
+      {{user.first_name.0}}{{user.last_name.0}} 
+      </div>
     </div>
     <div class="right">
       <h3><b>{{user.first_name}} {{user.last_name}}</b></h3>
@@ -89,5 +91,5 @@
     </div>
   </div>
 </div>
-{% endblock %} {% comment %} setAvatarImage( 'https://ui-avatars.com/api/?name='
-+ response.data.name + '&background=fff&size=33&color=007bff' ) {% endcomment %}
+
+{% endblock %}
