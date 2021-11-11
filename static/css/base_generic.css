@@ -16,8 +16,9 @@ body {
   height: 100%;
   width: clamp(180px,16vw,16vw);
   position: fixed;
+  z-index: 1 !important;
   background-color: #006666;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .sidenav .hidenav{
@@ -99,6 +100,11 @@ body {
   margin: auto 10px;
   font-family: 'Titillium Web', sans-serif;
   padding-right: 10px;
+}
+
+#active {
+  color: #00b3b3;
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 650px) {

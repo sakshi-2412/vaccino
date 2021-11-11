@@ -84,7 +84,7 @@ class VaccDetails(models.Model):
     student = models.ForeignKey(User, related_name='student', on_delete=models.CASCADE)
     reference_id = models.CharField(max_length=30, blank=True)
     vaccine_name = models.CharField(max_length=15, blank=True, choices= VACCINE_NAME)
-    dose_taken = models.PositiveIntegerField(null=True, blank=True, choices= DOSE_TAKEN, default= '1')
+    dose_taken = models.PositiveIntegerField(null=True, blank=True, choices= DOSE_TAKEN)
     date1 = models.DateField(null=True, blank=True)
     date2 = models.DateField(null=True, blank=True) 
     certificate = models.FileField(null=True, blank=True, upload_to=user_directory_path)  
