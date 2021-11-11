@@ -15,7 +15,7 @@
 
 .pie {
   background-color: white;
-  width: clamp(250px,30vw,30vw);
+  width: clamp(300px,30vw,30vw);
   height: clamp(250px,20vw,20vw);
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
@@ -33,16 +33,19 @@
   border-radius: 10px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
   .wrapper {
     flex-direction: column;
   }
   
   .pie {
     margin: 10px auto;
+    width: clamp(400px,50vw,50vw);
+    height: clamp(300px,35vw,35vw);
   }
+  
   .bar_chart {
-    width: clamp(250px,50vw,50vw);
+    width: clamp(400px,50vw,50vw);
     margin: 10px auto;
   }
 }

@@ -59,6 +59,15 @@
     width: 300px;
 }
 
+@media only screen and (max-width: 500px) {
+    #id_first_name, #id_last_name, #id_email, #id_username, #id_password1, 
+    #id_password2, #id_roll_no, #id_branch, #id_program, #id_year, #id_age,
+    #id_gender, #id_reference_id, #id_vaccine_name, #id_dose_taken, #id_date1,
+    #id_date2, #id_certificate{
+        width: 185px;
+    }  
+}
+
 #certificate-clear_id, label{
     display: none;
 }
