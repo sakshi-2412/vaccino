@@ -7,17 +7,21 @@ def user_directory_path(instance, filename):
     return 'user_{0}/{1}'.format(instance.student.id, filename)
 
 BRANCH_CHOICES= [
-    ('COMPUTER SCIENCE AND ENGINEERING','Computer Science and Engineering'),
-    ('ELECTRONICS ENGINEERING','Electronics Engineering'),
-    ('ELECTRICAL ENGINEERING','Electrical Engineering'),
-    ('MATHEMATICS AND COMPUTING','Mathematics and Computing'),
-    ('MECHANICAL ENGINEERING','Mechanical Engineering'),
-    ('CIVIL ENGINEERING','Civil Engineering'),
-    ('CHEMICAL ENGINEERING','Chemical Engineering'),
-    ('MINING ENGINEERING','Mining Engineering'),
-    ('CEREMIC ENGINEERING','Ceremic Engineering'),
     ('ARCHITECTURE ENGINEERING','Architecture Engineering'),
     ('BIOCHEMICAL ENGINEERING','Biochemical Engineering'),
+    ('CEREMIC ENGINEERING','Ceremic Engineering'),
+    ('CHEMICAL ENGINEERING','Chemical Engineering'),
+    ('CIVIL ENGINEERING','Civil Engineering'),
+    ('COMPUTER SCIENCE AND ENGINEERING','Computer Science and Engineering'),
+    ('ELECTRICAL ENGINEERING','Electrical Engineering'),
+    ('ELECTRONICS ENGINEERING','Electronics Engineering'),
+    ('ENGINEERING PHYSICS','Engineering Physics'),
+    ('INDUSTRIAL CHEMISTRY ENGINEERING','Industry Chemistry Engineering'),
+    ('MATERIAL SCIENCE AND ENGINEERING','Material Science and Engineering'),
+    ('MATHEMATICS AND COMPUTING','Mathematics and Computing'),
+    ('MECHANICAL ENGINEERING','Mechanical Engineering'),
+    ('METALLURGY ENGINEERING','Metallurgy Engineering'),
+    ('MINING ENGINEERING','Mining Engineering'),
     ('PHARMACEUTICAL ENGINEERING','Pharmaceutical Engineering'),
     ]
 
