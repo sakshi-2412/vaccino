@@ -5,8 +5,10 @@ from django.shortcuts import redirect
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 import datetime
+from django.views.decorators.cache import cache_control
 
 # Create your views here.
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def register(request):
     if request.user.is_authenticated:
 	    return redirect('index')
@@ -35,6 +37,7 @@ def register(request):
 
         return render(request, 'register.html', { 'user_form': user_form })
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def login_(request):
 	if request.user.is_authenticated:
 		return redirect('index')
@@ -58,6 +61,7 @@ def logout_(request):
 	logout(request)
 	return redirect('login')
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def index(request):
     return render(request, 'index.html')
 
