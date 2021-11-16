@@ -125,3 +125,22 @@ body {
     margin-left: 50px;
   }
 }
+
+@media only screen and (min-width: 651px) {
+  .sidenav .hidenav{
+    display: none;
+  }
+
+  .sidenav{
+    width: clamp(180px,16vw,16vw);
+    padding-top: 10px;
+  }
+
+  .sidenav .shownav{
+    display: block;
+  }
+
+  .container-fluid{
+    margin-left: clamp(180px,16vw,16vw);
+  }
+}
