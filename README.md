@@ -2,7 +2,7 @@
 
 Vaccino is a Django based website which helps an institute to store the records of vaccination details 
 and covid history of the students of the institution, thus facilitating the procedure of maintaining surveys
-inside the campus to control the corona outbreak. ✨
+inside the campus to control the corona outbreak✨
 
 ## Setting up this project
 - Make sure `python3.8` and `pip` are installed. Install `pipenv` by running `pip install pipenv`.
