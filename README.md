@@ -10,6 +10,7 @@ inside the campus to control the corona outbreak✨
 - To activate this project's virtualenv, run `pipenv shell`.
 - Run `python manage.py makemigrations` to identify the changes you have made to the database model.
 - Run `python manage.py migrate` to apply migrations.
+- To connect database to MySQL Client run command `pip install mysqlclient`
 - Start the development server using `python manage.py runserver`.
 
 ## Contributors
